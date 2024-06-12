@@ -66,7 +66,7 @@ Esto iniciará el servidor Flask en http://127.0.0.1:5000/. Abre un navegador we
 ## Configuración del Modelo
 
 * **Categorías de Colores:**
-  La aplicación está configurada para predecir entre las siguientes categorías de colores: naranja, violeta, rojo, azul, verde, negro, marrón y blanco.
+  La aplicación está configurada para predecir entre las siguientes categorías de colores: violeta, rojo, azul, verde, negro, marrón y blanco.
   
 * **Tamaño de Imágenes:**
   El tamaño de las imágenes utilizado durante el entrenamiento del modelo es de 128x128 píxeles.
