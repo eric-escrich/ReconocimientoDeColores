@@ -63,6 +63,14 @@ Esto iniciará el servidor Flask en http://127.0.0.1:5000/. Abre un navegador we
    * La aplicación enviará la imagen al servidor para la predicción.
    * El color predicho se mostrará debajo de la imagen o en la consola del navegador.
 
+## Configuración del Modelo
+
+* **Categorías de Colores:**
+  La aplicación está configurada para predecir entre las siguientes categorías de colores: naranja, violeta, rojo, azul, verde, negro, marrón y blanco.
+  
+* **Tamaño de Imágenes:**
+  El tamaño de las imágenes utilizado durante el entrenamiento del modelo es de 128x128 píxeles.
+
 ## Explicación
 
 La aplicación utiliza un modelo de inteligencia artificial (IA) entrenado previamente para predecir el color predominante en una imagen. El modelo ha sido entrenado con diversas categorías de colores y utiliza técnicas de procesamiento de imágenes para normalizar y redimensionar las imágenes de entrada antes de realizar la predicción.
