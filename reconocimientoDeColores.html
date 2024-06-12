@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reconocimiento de Colores</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+        img {
+            max-width: 300px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>RECONOCIMIENTO DE COLORES</h1>
+    <input type="file" id="fileInput" accept="image/*">
+    <img id="image" src="" alt="Imagen cargada">
+    <p id="predictedColor"></p>
+    <script>
+        document.getElementById('fileInput').addEventListener('change', async function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = async function(e) {
+                    const imgElement = document.getElementById('image');
+                    imgElement.src = e.target.result;
+                    await new Promise(resolve => imgElement.onload = resolve); // Esperar a que la imagen se cargue
+                    
+                    try {
+                        // Crear un objeto FormData para enviar el archivo
+                        const formData = new FormData();
+                        formData.append('file', file);
+    
+                        // Enviar la imagen al backend para la predicción
+                        const response = await fetch('/predict', {
+                            method: 'POST',
+                            body: formData,
+                        });
+    
+                        if (!response.ok) {
+                            throw new Error('Error en la solicitud');
+                        }
+    
+                        const data = await response.json();
+                        document.getElementById('predictedColor').textContent = 'Color reconocido: ' + data.color;
+                    } catch (error) {
+                        console.error('Error:', error);
+                    }
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+</html>
