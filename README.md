@@ -19,12 +19,14 @@ Asegúrate de tener instalados los siguientes componentes:
 
    ```bash
    git clone https://github.com/eric-escrich/ReconocimientoDeColores
-   cd ReconocimientoDeColores```
+   cd ReconocimientoDeColores
+   ```
 
 2. **Instalar las dependencias de Python:**
 
    ```bash
-   pip install tensorflow opencv-python-headless matplotlib flask flask-cors```
+   pip install tensorflow opencv-python-headless matplotlib flask flask-cors
+   ```
 
    * **tensorflow:** Librería para cargar y utilizar el modelo de inteligencia artificial.
    * **opencv-python-headless:** Biblioteca para el procesamiento de imágenes.
@@ -45,7 +47,8 @@ Asegúrate de tener instalados los siguientes componentes:
 Una vez instaladas las dependencias y configurado el entorno, puedes ejecutar la aplicación:
 
 ```bash
-python app.py```
+python app.py
+```
 
 Esto iniciará el servidor Flask en http://127.0.0.1:5000/. Abre un navegador web y accede a esta dirección para usar la aplicación.
 
