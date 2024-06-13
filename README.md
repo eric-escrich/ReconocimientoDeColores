@@ -22,7 +22,22 @@ Asegúrate de tener instalados los siguientes componentes:
    cd ReconocimientoDeColores
    ```
 
-2. **Instalar las dependencias de Python:**
+2. **Crear un Entorno Virtual**
+   Este paso no es indispensable pero sí muy recomendable, sobretodo en el caso de Windows.
+   
+   * En Windows:
+     ```bash
+     python -m venv venv
+     venv\Scripts\activate
+     ```
+     
+    * En Linux o MacOS:
+      ```bash
+      python3 -m venv venv
+      source venv/bin/activate
+      ```
+      
+4. **Instalar las dependencias de Python:**
 
    ```bash
    pip install tensorflow opencv-python-headless matplotlib flask flask-cors
@@ -33,11 +48,11 @@ Asegúrate de tener instalados los siguientes componentes:
    * **matplotlib:** Utilizado para mostrar gráficamente la imagen y el color predicho (opcional si solo se muestra en consola).
    * **flask y flask-cors:** Framework web y extensión para manejar solicitudes CORS en Flask.
 
-3. **Descargar el modelo preentrenado:**
+5. **Descargar el modelo preentrenado:**
 
    Asegúrate de tener el modelo .h5 en la ruta especificada en el código Flask (app.py). Puedes descargar el modelo entrenado desde tu entorno de desarrollo o desde un servidor.
 
-4. **Modificar el código según sea necesario:**
+6. **Modificar el código según sea necesario:**
 
    * Verifica la ruta del modelo en app.py y asegúrate de que coincida con la ubicación de tu modelo descargado.
    * Si es necesario, ajusta las rutas en prediccionDeColores.html para asegurarte de que se están cargando correctamente los recursos estáticos.
